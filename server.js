@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
@@ -24,7 +25,8 @@ if (process.env.NODE_ENV === "production") {
 
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/codersroadmap",
+  process.env.MONGODB_URI ||
+    "mongodb://process.env.DB_USER:process.env.DB_PASS@ds045252.mlab.com:45252/heroku_9xqfp9gz",
   {
     useNewUrlParser: true,
   }
